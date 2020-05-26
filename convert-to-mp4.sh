@@ -27,3 +27,12 @@ for i in *.mkv; do
   echo "Convertendo $i para $output"
   ffmpeg -i "$i" -vcodec h264 -acodec mp2 "$output"
 done
+
+# *.webm
+for i in *.webm; do
+  [[ -f "$i" ]] || continue
+  output="${i%.webm}.mp4"
+  echo "Convertendo $i para $output"
+  ffmpeg -i "$i" -vcodec h264 -acodec mp2 "$output"
+done
+
