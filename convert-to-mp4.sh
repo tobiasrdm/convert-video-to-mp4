@@ -25,5 +25,5 @@ for i in *.mkv; do
   [[ -f "$i" ]] || continue
   output="${i%.mkv}.mp4"
   echo "Convertendo $i para $output"
-  ffmpeg -i "$i" -codec copy "${i%.*}.mp4"
+  ffmpeg -i "$i" -vcodec h264 -acodec mp2 "$output"
 done
